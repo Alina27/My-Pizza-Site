@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Pizza</title>
+
+    <!-- Bootsrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- LESS основний файл -->
+    <link rel="stylesheet/less" type="text/css" href="assets/less/main.less" />
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+
+
+</head>
+<body>
+	
+<!--	
+<div id="cart"></div>
+<div class="container">
+    <div class="row" id="pizza_list">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail pizza-card">
+                <img src="assets/images/pizza_1.jpg">
+
+                <div class="caption"><h3>Thumbnail label</h3>
+
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+                    <p>
+                        <a href="#" class="btn btn-primary">Button 2</a>
+                        <a href="#" class="btn btn-default">Button 1</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail pizza-card">
+                <img src="assets/images/pizza_2.jpg">
+
+                <div class="caption"><h3>Thumbnail label</h3>
+
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+                    <p>
+                        <a href="#" class="btn btn-primary">Button 3</a>
+                        <a href="#" class="btn btn-default">Button 4</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail pizza-card">
+                <img src="assets/images/pizza_3.jpg">
+
+                <div class="caption"><h3>Thumbnail label</h3>
+
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+                    <p>
+                        <a href="#" class="btn btn-primary">Button 5</a>
+                        <a href="#" class="btn btn-default">Button 6</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+ <div class="container">
+	<div class = "row">
+		
+<div class = "col-lg=6" id = "mainContainer"> 
+	
+   <h3 id = "allPizzasLabel"> Усі Піци <span class="badge badge-warning" id ="badgeItems">8</span><br></h3>	
+	
+	<div class="btn-group" id = "buttonsList">
+		
+      <button type="button" class = "btn btn-default" id = "all">Усі</button>
+		
+      <button type="button" class = "btn btn-default" id = "meat">М'ясні</button>
+		
+      <button type="button" class = "btn btn-default" id = "pineapple">З ананасами</button>
+		
+			
+	  <button type="button" class = "btn btn-default" id = "mushrooms">З грибами</button>
+	  <button type="button" class = "btn btn-default" id = "seafood">З морепродуктами</button>
+	  <button type="button" class = "btn btn-default" id = "vaga">Вега</button>
+</div>
+	
+	<div class = "container">
+	
+		<div class = "row" id="pizza_list">
+			<!--
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail pizza-card">
+					
+					<span class="label label-danger" id = "newLabel"> <h4 id ="newText"> Нова </h4> </span>
+					
+				  <img src="assets/images/pizza_1.jpg">
+					<h1 class = "pizzaName">Імпреза</h1>
+					<h5 class = "pizzaType">М'ясна піца</h5>
+					<h4 class = "pizzaDescription">
+					 Балик, ковбаса салямі, сир 'Моцарелла', сир 'Рокфорд', ананаси, томатна паста, петрушка 
+					</h4>
+					<div class="col-lg-6" id = "size-icon">
+						
+					   <img src="assets/images/size-icon.svg">
+						 <h5 id = "size">30</h5>
+						
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <img src="assets/images/size-icon.svg">
+						<h5 id = "size">40</h5>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+						
+					   <img src="assets/images/weight.svg">
+						 <h5 id = "size">370</h5>
+						
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <img src="assets/images/weight.svg">
+						<h5 id = "size">660</h5>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+						<h2 id = "prise"> 99 </h2>
+						<h4 id = "currency">грн.</h4>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <h2 id = "prise"> 169 </h2>
+					   <h4 id = "currency">грн.</h4>
+					</div>
+					
+					<div class="col-lg-6" id = "buyButton">
+					   <button type="button" class = "btn btn-warning">Купити</button>
+					</div>
+					
+					<div class="col-lg-6" id = "buyButton">
+					   <button type="button" class = "btn btn-warning">Купити</button>
+					</div>
+					
+					
+				</div>
+			</div>
+			
+			
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail pizza-card">
+					
+					<span class="label label-success" id = "popularLabel"> <h4 id ="popularText"> Популярна </h4> </span>
+					
+				  <img src="assets/images/pizza_2.jpg">
+					<h1 class = "pizzaName">BBQ</h1>
+					<h5 class = "pizzaType">М'ясна піца</h5>
+					<h4 class = "pizzaDescription">
+					 Мисливські ковбаски, ковбаски папероні, шинка cир домашній, шампіньйони, петрушка, оливки
+					</h4>
+					
+					<div class="col-lg-6" id = "size-icon">
+						
+					   <img src="assets/images/size-icon.svg">
+						 <h5 id = "size">30</h5>
+						
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <img src="assets/images/size-icon.svg">
+						<h5 id = "size">40</h5>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+						
+					   <img src="assets/images/weight.svg">
+						 <h5 id = "size">460</h5>
+						
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <img src="assets/images/weight.svg">
+						<h5 id = "size">840</h5>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+						<h2 id = "prise"> 139 </h2>
+						<h4 id = "currency">грн.</h4>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <h2 id = "prise"> 199 </h2>
+					   <h4 id = "currency">грн.</h4>
+					</div>
+					
+					<div class="col-lg-6" id = "buyButton">
+					   <button type="button" class = "btn btn-warning">Купити</button>
+					</div>
+					
+					<div class="col-lg-6" id = "buyButton">
+					   <button type="button" class = "btn btn-warning">Купити</button>
+					</div>
+					
+				</div>
+			</div>
+			
+			
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail pizza-card">
+				  <img src="assets/images/pizza_3.jpg">
+					<h1 class = "pizzaName">Міксовий поло</h1>
+					<h5 class = "pizzaType">М'ясна піца</h5>
+					<h4 class = "pizzaDescription">
+					 Яловичина, курка копчена, Cир 'Моцарелла', ананаси, кукурудза, петрушка, соус томатний
+					</h4>
+					
+					<div class="col-lg-6" id = "size-icon">
+						
+					   <img src="assets/images/size-icon.svg">
+						 <h5 id = "size">30</h5>
+						
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <img src="assets/images/size-icon.svg">
+						<h5 id = "size">40</h5>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+						
+					   <img src="assets/images/weight.svg">
+						 <h5 id = "size">430</h5>
+						
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <img src="assets/images/weight.svg">
+						<h5 id = "size">780</h5>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+						<h2 id = "prise"> 115 </h2>
+						<h4 id = "currency">грн.</h4>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <h2 id = "prise"> 179 </h2>
+					   <h4 id = "currency">грн.</h4>
+					</div>
+					
+					<div class="col-lg-6" id = "buyButton">
+					   <button type="button" class = "btn btn-warning">Купити</button>
+					</div>
+					
+					<div class="col-lg-6" id = "buyButton">
+					   <button type="button" class = "btn btn-warning">Купити</button>
+					</div>
+					
+				</div>
+			</div>	
+			-->
+		</div>	
+		
+		
+		<div class = "row" id="pizza_list">
+		  <!--	
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail pizza-card">
+				  <img src="assets/images/pizza_4.jpg">
+					<h1 class = "pizzaName">Сициліано</h1>
+					<h5 class = "pizzaType">М'ясна піца</h5>
+					<h4 class = "pizzaDescription">
+					 Яловичина, ковбаса салямі, сир 'Моцарелла', шампіньйони, перець болгарський, соус томатний
+					</h4>
+					
+					<div class="col-lg-6" id = "size-icon">
+						
+					   <img src="assets/images/size-icon.svg">
+						 <h5 id = "size">30</h5>
+						
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <img src="assets/images/size-icon.svg">
+						<h5 id = "size">40</h5>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+						
+					   <img src="assets/images/weight.svg">
+						 <h5 id = "size">450</h5>
+						
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <img src="assets/images/weight.svg">
+						<h5 id = "size">790</h5>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+						<h2 id = "prise"> 111 </h2>
+						<h4 id = "currency">грн.</h4>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <h2 id = "prise"> 169 </h2>
+					   <h4 id = "currency">грн.</h4>
+					</div>
+					
+					<div class="col-lg-6" id = "buyButton">
+					   <button type="button" class = "btn btn-warning">Купити</button>
+					</div>
+					
+					<div class="col-lg-6" id = "buyButton">
+					   <button type="button" class = "btn btn-warning">Купити</button>
+					</div>
+					
+				</div>
+			</div>
+			
+			
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail pizza-card">
+				  <img src="assets/images/pizza_5.jpg">
+					<h1 class = "pizzaName">Маргарита</h1>
+					<h5 class = "pizzaType">Вега</h5>
+					<h4 class = "pizzaDescription">
+					 Cир 'Моцарелла', cир домашній, помідори, базилік, оливкова олія, соус томатний
+					</h4>
+					
+					<div class="col-lg-12" id = "size-iconOneM">
+					   <img src="assets/images/size-icon.svg">
+						 <h5 id = "size">30</h5>
+					 </div>
+					
+					 <div class="col-lg-12" id = "size-iconOneM">
+					   <img src="assets/images/weight.svg">
+						 <h5 id = "size">845</h5>
+					</div>
+					
+					<div class="col-lg-12" id = "size-iconOneM">
+						<h2 id = "priseOneM"> 189 </h2>
+						<h4 id = "currencyO">грн.</h4>
+					</div>
+					
+					<div class="col-lg-12" id = "buyButtonOneM">
+					   <button type="button" class = "btn btn-warning">Купити</button>
+					</div>
+					
+				</div>
+			</div>
+			
+			
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail pizza-card">
+				  <img src="assets/images/pizza_6.jpg">
+					<h1 class = "pizzaName">Мікс смаків</h1>
+					<h5 class = "pizzaType">М'ясна піца</h5>
+					<h4 class = "pizzaDescription">
+					 Ковбаски, Cир 'Моцарелла', шампіньйони, ананаси, цибуля кримська, огірки квашені, 
+					 соус гірчичний
+					</h4>
+					
+					<div class="col-lg-6" id = "size-icon">
+						
+					   <img src="assets/images/size-icon.svg">
+						 <h5 id = "size">30</h5>
+						
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <img src="assets/images/size-icon.svg">
+						<h5 id = "size">40</h5>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+						
+					   <img src="assets/images/weight.svg">
+						 <h5 id = "size">470</h5>
+						
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <img src="assets/images/weight.svg">
+						<h5 id = "size">780</h5>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+						<h2 id = "prise"> 115 </h2>
+						<h4 id = "currency">грн.</h4>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <h2 id = "prise"> 180 </h2>
+					   <h4 id = "currency">грн.</h4>
+					</div>
+					
+					<div class="col-lg-6" id = "buyButton">
+					   <button type="button" class = "btn btn-warning">Купити</button>
+					</div>
+					
+					<div class="col-lg-6" id = "buyButton">
+					   <button type="button" class = "btn btn-warning">Купити</button>
+					</div>
+					
+				</div>
+			</div>
+			-->
+		</div>	
+		
+		
+		
+		<div class = "row" id="pizza_list">
+		  <!--	
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail pizza-card">
+				  <img src="assets/images/pizza_7.jpg">
+					<h1 class = "pizzaName">Дольче Маре</h1>
+					<h5 class = "pizzaType">Морська піца</h5>
+					<h4 class = "pizzaDescription">
+					 Креветки тигрові, мідії, ікра червона, філе червоної риби, Cир 'Моцарелла', оливкова олія, вершки
+					</h4>
+					
+					 <div class="col-lg-12" id = "size-iconOneDM">
+					   <img src="assets/images/size-icon.svg">
+						 <h5 id = "size">30</h5>
+					 </div>
+					
+					 <div class="col-lg-12" id = "size-iconOneDM">
+					   <img src="assets/images/weight.svg">
+						 <h5 id = "size">845</h5>
+					</div>
+					
+					<div class="col-lg-12" id = "size-iconOneDM">
+						<h2 id = "priseOneDM"> 189 </h2>
+						<h4 id = "currencyO">грн.</h4>
+					</div>
+					
+					<div class="col-lg-12" id = "buyButtonOneDM">
+					   <button type="button" class = "btn btn-warning">Купити</button>
+					</div>
+					
+				</div>
+			</div>
+			
+			
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail pizza-card">
+				  <img src="assets/images/pizza_8.jpg">
+					<h1 class = "pizzaName">Россо Густо</h1>
+					<h5 class = "pizzaType">Морська піца</h5>
+					<h4 class = "pizzaDescription">
+					 Ікра червона, лосось копчений, 
+					 Cир 'Моцарелла', оливкова олія, вершки
+					</h4>
+					
+					<div class="col-lg-6" id = "size-icon">
+						
+					   <img src="assets/images/size-icon.svg">
+						 <h5 id = "size">30</h5>
+						
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <img src="assets/images/size-icon.svg">
+						<h5 id = "size">40</h5>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+						
+					   <img src="assets/images/weight.svg">
+						 <h5 id = "size">400</h5>
+						
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <img src="assets/images/weight.svg">
+						<h5 id = "size">700</h5>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+						<h2 id = "prise"> 189 </h2>
+						<h4 id = "currency">грн.</h4>
+					</div>
+					
+					<div class="col-lg-6" id = "size-icon">
+					   <h2 id = "prise"> 299 </h2>
+					   <h4 id = "currency">грн.</h4>
+					</div>
+					
+					<div class="col-lg-6" id = "buyButton">
+					   <button type="button" class = "btn btn-warning">Купити</button>
+					</div>
+					
+					<div class="col-lg-6" id = "buyButton">
+					   <button type="button" class = "btn btn-warning">Купити</button>
+					</div>
+					
+				</div>
+			</div>	
+			-->
+		</div>
+		
+	
+	</div> 
+	
+	<div class = "bottomSeparator">
+		<h5 class = "info">Pizza.22 - практичний проект в межах курсу JavaScript в Києво-Могилянській Академії
+		</h5>
+		<h5 class = "info">
+		Доставка піци не здійснюється
+		</h5>
+	</div>
+	
+</div>
+		
+    <div class = "col-lg=12" id = "topLine"> 
+		
+		<div class = "col-lg-4">
+	  <h4 id = "phoneNumber">(044) 222 5 222</h4>
+		<h5 id = "log">24 години на добу 7 днів на тиждень</h5>
+	<h4 id = "freeDelivery">Безкоштовна доставка</h4>
+		
+		<div class="col-lg-12" id = "SignIn">
+		   <button type="button" class = "btn btn-warning" id = "check">Ввійти</button>
+		</div>
+			
+		 </div>
+		
+		<div id = "flagTop">
+			<h4 id = "pizzaName">PIZZA KMA </h4>
+		</div>
+		
+		
+	      <hr id = "hr"></hr>
+		
+		<a href="#" id = "reload">Піца</a> 	
+		</div>	 
+
+<div class = "col-lg=12" id = "bottomLine">
+	<div id = "flagBottom">
+		
+		<h5 id = "pizzaName">ЦЬОГО ТИЖНЯ НА ВСЕ </h5>
+			<div id = "dashHr"></div>
+		<h5 id = "discountePersent">-20%</h5>	
+	 </div>
+	
+</div>
+	
+	<div class = "col-lg=6" id = "minorContainer">
+		
+	    
+		<h4 class = "emptyMess">Пусто в холодильнику ?</h4>
+		<h4 class = "emptyMess">Замовте піцу</h4> 
+					
+  		
+  <div id = "smallPanel"> 
+	
+<!--	 
+ <div class="row">
+		  
+  <div class="col-lg-8">
+	
+	   <span id = "name">Mix Polo</span>
+	  
+	   <span id = "name" class = "sizeTitle">(Large)</span>
+		  <div class="row">
+               <div class="col-lg-6">
+			     <img src="assets/images/size-icon.svg">
+				 <h5 id = "size">##</h5>
+			   </div>
+			  
+               <div class="col-lg-6">
+			      <img src="assets/images/weight.svg">
+				  <h5 id = "size" class = "weight">###</h5>
+			   </div>
+          </div> 
+	  
+
+	            <div id = "outer">
+					<div class = "inner">  </div>
+					
+					<div class = "inner">  </div>
+					
+					<div class = "inner">  </div>
+					
+					<div class = "inner">  </div>
+					
+					<div class = "inner">  </div>
+			     
+			  </div>
+	  
+	  <div id = "outer">
+					<div class = "inner"> <h5 id = "prizeS"> 99 грн </h5> </div>
+					
+					<div class = "inner"> <button type="button" class = "btn btn-danger" id = "minusButton">-</button> </div>
+					
+					<div class = "inner"> <h5 id = "ordersAmount">1</h5> </div>
+					
+					<div class = "inner"> <button type="button" class = "btn btn-success" id = "plusButton">+</button> </div>
+					
+					<div class = "inner"> <button type="button" class = "btn btn-default" id = "deleteButton">x</button>  </div>
+			     
+			  </div>
+	  
+	    </div>
+		  
+		  <div class="col-lg-4">
+	         <img src="assets/images/pizza_3.jpg" id = "pizzaImg">	  
+	     </div>
+	     
+  </div>  -->
+		    
+      </div>
+		
+	  
+	<!-- 
+	<div class = "col-lg-9" id = "firstDevider">
+		<div class = "row" id = "firstRow">
+			 <span id = "name">##</span>
+			 <span id = "name" class = "sizeTitle">(##)</span>
+		</div>
+				 
+		<div class = "row" id = "secondRow">
+			<div class="col-lg-4" id = "size-iconS">
+				 <img src="assets/images/size-icon.svg">
+				 <h5 id = "size">##</h5>
+			</div>
+				
+			 <div class="col-lg-4" id = "size-iconS">
+				  <img src="assets/images/weight.svg">
+				  <h5 id = "size" class = "weight">###</h5>
+			 </div>
+		 </div>
+
+		 <h5 id = "prizeS"> ##грн </h5>
+		 
+		<button type="button" class = "btn btn-danger" id = "minusButton">-</button>
+		
+		<h5 id = "ordersAmount">1</h5>
+			
+		<button type="button" class = "btn btn-success" id = "plusButton">+</button>
+			
+		<button type="button" class = "btn btn-default" id = "deleteButton">x</button> 
+	</div>
+			
+	    <div class = "col-lg-3" id = "secondDevider">
+		     <img src="assets/images/pizza_3.jpg" id = "pizzaImg">
+		</div>
+	          -->
+	  </div>	 
+	 
+	</div>
+		
+	<div class = "col-lg=12" id = "topMinorLine"> 
+	    <h3 id = "ordersLabel"> Замовлення <span class="badge" id = "ordersBadge" >0</span><br></h3> 
+		
+ <h6 class = "clearOrder">Очистити замовлення</h6> 
+   <!-- <button type="button" class = "btn btn-default" id = "clearOrderButton"> <h6 class = "clearOrder"> Очистити замовлення </h6> </button> -->
+ </div>
+	
+	
+	<div class = "col-lg=12" id = "bottomMinorLine"> 
+		<button type="button" class = "btn btn-warning disabled" id = "orderButton"><h3 class = "order">Замовити</h3></button>
+	</div>
+	
+	 <div class = "col-lg=12" id = "preBottomMinorLine">
+		  <!--
+		 <span id = "priceLabel">Сума замовлення</span>
+		 <span id = "priceTag"><%=priceIncrease%>грн.</span> -->
+	 </div>
+	 
+    </div>   
+</div>  
+	
+	
+<!-- jQuery JavaScript -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+
+<!--Bootsrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!--Own JavaScript -->
+<script type="text/javascript"  src="assets/js/main.js"> </script>
+</body>
+</html>

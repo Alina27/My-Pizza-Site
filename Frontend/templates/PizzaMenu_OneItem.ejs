@@ -1,0 +1,358 @@
+<!--
+<%
+
+function getIngredientsArray(pizza) {
+    //Отримує вміст піци
+    var content = pizza.content;
+    var result = [];
+
+    //Object.keys повертає масив ключів в об’єкті JavaScript
+
+    Object.keys(content).forEach(function(key){
+
+        //a.concat(b) створює спільний масив із масивів a та b
+        result = result.concat(content[key]);
+    });
+
+    return result;
+}
+
+   %>
+
+<div class="col-md-6 col-lg-4">
+	<div class="thumbnail pizza-card">
+		
+		<% if(pizza.is_new) { %>
+		   <span class="label label-danger" id = "newLabel"> <h4 id ="newText"> Нова </h4> </span>
+		<% } else if(pizza.is_popular){ %> 
+	       <span class="label label-success" id = "popularLabel"> <h4 id ="popularText"> Популярна </h4> </span>
+	    <% } %>
+		
+     <img src= "<%= pizza.icon%>">
+	 <h1 class = "pizzaName"><%= pizza.title%></h1>
+	 <h5 class = "pizzaType"><%= pizza.type%></h5>
+	 <h4 class = "pizzaDescription">
+	   <%= getIngredientsArray(pizza).join(", ") %>
+	 </h4> 
+		
+		
+		<% if(pizza.oneS) { %>
+		   <div class="col-lg-12" id = "size-iconOneM">
+			   <img src="assets/images/size-icon.svg">
+		  <h5 id = "size"><%= pizza.small_size.size%></h5>
+		  </div>
+		  <div class="col-lg-12" id = "size-iconOneM">
+			   <img src="assets/images/weight.svg">
+		  <h5 id = "size"><%= pizza.small_size.weight%></h5>
+		  </div>
+		  <div class="col-lg-12" id = "size-iconOneM">
+			   <h2 id = "priseOneM"> <%= pizza.small_size.price%> </h2>
+			   <h4 id = "currencyO">грн.</h4>
+		  </div>
+		   <div class="col-lg-12" id = "buyButtonOneM">
+				 <button type="button" class = "btn btn-warning" id = "buttonSmallId>">Купити</button>
+			</div>
+		<% } else  if (pizza.oneB) { %>
+		<div class="col-lg-12" id = "size-iconOneM">
+			   <img src="assets/images/size-icon.svg">
+		  <h5 id = "size"><%= pizza.big.size%></h5>
+		  </div>
+		  <div class="col-lg-12" id = "size-iconOneM">
+			   <img src="assets/images/weight.svg">
+		  <h5 id = "size"><%= pizza.big_size.weight%></h5>
+		  </div>
+		  <div class="col-lg-12" id = "size-iconOneM">
+			   <h2 id = "priseOneM"><%=pizza.big_size.price%></h2>
+			   <h4 id = "currencyO">грн.</h4>
+		  </div>
+		
+		<div class="col-lg-12" id = "buyButtonOneDM">
+		   <button type="button" class = "btn btn-warning" id = "buttonBigId>">Купити</button>
+		</div>
+		
+		
+		
+		<% if(pizza.small_size == null || pizza.big_size == null){ %>
+		 <div class="col-lg-12" id = "size-iconOneM">
+			   <img src="assets/images/size-icon.svg">
+		  <h5 id = "size">30</h5>
+		  </div>
+		  <div class="col-lg-12" id = "size-iconOneM">
+			   <img src="assets/images/weight.svg">
+		  <h5 id = "size">845</h5>
+		  </div>
+		  <div class="col-lg-12" id = "size-iconOneM">
+			   <h2 id = "priseOneM"> 189 </h2>
+			   <h4 id = "currencyO">грн.</h4>
+		  </div>
+		   <div class="col-lg-12" id = "buyButtonOneM"> 
+				<button type="button" class = "btn btn-warning" id = "<%=pizza.buttonId%>">Купити</button>
+		   </div>
+		<% } else { %>
+		
+	 <div class="col-lg-6" id = "size-icon">
+		  <img src="assets/images/size-icon.svg">
+		  <h5 id = "size"><%= pizza.small_size.size%></h5>
+	 </div>	
+		
+	 <div class="col-lg-6" id = "size-icon">
+	      <img src="assets/images/size-icon.svg">
+		  <h5 id = "size"><%= pizza.big_size.size%></h5>
+	</div>
+		
+	<div class="col-lg-6" id = "size-icon">
+		  <img src="assets/images/weight.svg">
+		  <h5 id = "size"><%= pizza.small_size.weight%></h5>
+	</div>
+		
+	<div class="col-lg-6" id = "size-icon">
+		  <img src="assets/images/weight.svg">
+		  <h5 id = "size"><%= pizza.big_size.weight%></h5>
+	</div> 
+		
+	<div class="col-lg-6" id = "size-icon">
+		  <h2 id = "prise"><%= pizza.small_size.price%></h2>
+		  <h4 id = "currency">грн.</h4>
+	</div>
+		
+	<div class="col-lg-6" id = "size-icon">
+		   <h2 id = "prise"> <%= pizza.big_size.price%> </h2>
+		   <h4 id = "currency">грн.</h4>
+	</div>
+		
+		
+		<div class="col-lg-12" id = "buyButtonOneM">
+				<button type="button" class = "btn btn-warning">Купити</button>
+		</div>
+
+		
+	<div class="col-lg-6" id = "buyButton">
+			<button type="button" class = "btn btn-warning" id = "buttonSmallId>">Купити</button>
+	</div>
+		
+		
+		<div class="col-lg-12" id = "buyButtonOneDM">
+			  <button type="button" class = "btn btn-warning">Купити</button>
+		</div>
+
+				
+	<div class="col-lg-6" id = "buyButton">
+			<button type="button" class = "btn btn-warning" id = "buttonBigId">Купити</button>
+	</div>
+		
+	 
+		
+	</div>
+</div>
+       <% } %>
+-->
+
+
+<!--
+<div class="col-md-6 col-lg-4 pizza-card">
+    <div class="thumbnail">
+        <img class="pizza-icon" src="<%= pizza.icon %>" alt="Pizza">
+
+        <% if(pizza.is_new) { %> 
+        <span class="label label-danger">Нова</span>
+        <% } else if(pizza.is_popular) {%>
+        <span class="label label-success">Популярна</span>
+        <% } %>
+
+        <div class="caption">
+<span class="title"><%= pizza.title %></span>
+            <div class="type"><%= pizza.type %></div>
+            <div class="description">
+                <%= getIngredientsArray(pizza).join(", ") %>
+            </div>
+        </div>
+-->
+        <!-- Перед тим щоб показати кнопку необхідно переконатися, що піца має великий розмір -->
+<!--        <button class="btn btn-primary buy-big">Купити велику</button>
+    </div>
+</div> -->
+
+
+<%
+
+function getIngredientsArray(pizza) {
+    //Отримує вміст піци
+    var content = pizza.content;
+    var result = [];
+
+    //Object.keys повертає масив ключів в об’єкті JavaScript
+
+    Object.keys(content).forEach(function(key){
+
+        //a.concat(b) створює спільний масив із масивів a та b
+        result = result.concat(content[key]);
+    });
+
+    return result;
+}
+
+   %>
+
+<div class="col-md-6 col-lg-4">
+	<div class="thumbnail pizza-card">
+		
+		<% if(pizza.is_new) { %>
+		   <span class="label label-danger" id = "newLabel"> <h4 id ="newText"> Нова </h4> </span>
+		<% } else if(pizza.is_popular){ %> 
+	       <span class="label label-success" id = "popularLabel"> <h4 id ="popularText"> Популярна </h4> </span>
+	    <% } %>
+		
+     <img src= "<%= pizza.icon%>">
+	 <h1 class = "pizzaName"><%= pizza.title%></h1>
+	 <h5 class = "pizzaType"><%= pizza.type%></h5>
+	 <h4 class = "pizzaDescription">
+	   <%= getIngredientsArray(pizza).join(", ") %>
+	 </h4> 
+	<!--	
+	<% if(pizza.oneS) { %>
+	     <div class="col-lg-12" id = "size-iconOneM">
+               <img src="assets/images/size-icon.svg">	
+		       <h5 id = "size"><%=pizza.small_size.size%></h5>
+		 </div>
+		
+		<div class="col-lg-12" id = "size-iconOneM">
+			   <img src="assets/images/weight.svg">
+		       <h5 id = "size"><%= pizza.small_size.weight%></h5>
+		</div>
+		
+		<div class="col-lg-12" id = "size-iconOneM">
+			   <h2 id = "priseOneM"><%= pizza.small_size.price%></h2>
+			   <h4 id = "currencyO">грн.</h4>
+		</div>
+		
+		<div class="col-lg-12" id = "buyButtonOneM">
+			 <button type="button" class = "btn btn-warning" id = "buttonSmallId">Купити</button>
+		</div>
+		
+	<% } else if (pizza.oneB) { %>
+		    <div class="col-lg-12" id = "size-iconOneDM">
+			      <img src="assets/images/size-icon.svg">
+				  <h5 id = "size"><%= pizza.big_size.size%></h5>
+			 </div>
+		
+		     <div class="col-lg-12" id = "size-iconOneDM">
+				  <img src="assets/images/weight.svg">
+				  <h5 id = "size"><%= pizza.big_size.weight%></h5>
+			 </div>
+		
+		    <div class="col-lg-12" id = "size-iconOneDM">
+				  <h2 id = "priseOneDM"><%= pizza.big_size.price%></h2>
+				  <h4 id = "currencyO">грн.</h4>
+			</div>
+		
+		    <div class="col-lg-12" id = "buyButtonOneDM">
+				   <button type="button" class = "btn btn-warning" id = "buttonBigId">Купити</button> 
+			</div> 
+		
+	<% } else { %>
+		     <div class="col-lg-6" id = "size-icon">
+		          <img src="assets/images/size-icon.svg">
+		          <h5 id = "size"><%= pizza.small_size.size%></h5>
+	           </div>	
+		
+	         <div class="col-lg-6" id = "size-icon">
+	             <img src="assets/images/size-icon.svg">
+		         <h5 id = "size"><%= pizza.big_size.size%></h5>
+	         </div>
+		
+	         <div class="col-lg-6" id = "size-icon">
+		         <img src="assets/images/weight.svg">
+		         <h5 id = "size"><%= pizza.small_size.weight%></h5>
+	         </div>
+		
+	         <div class="col-lg-6" id = "size-icon">
+		        <img src="assets/images/weight.svg">
+		        <h5 id = "size"><%= pizza.big_size.weight%></h5>
+	         </div> 
+		
+	        <div class="col-lg-6" id = "size-icon">
+		       <h2 id = "prise"><%= pizza.small_size.price%></h2>
+		       <h4 id = "currency">грн.</h4>
+	        </div>
+		
+	        <div class="col-lg-6" id = "size-icon">
+		       <h2 id = "prise"> <%= pizza.big_size.price%> </h2>
+		       <h4 id = "currency">грн.</h4>
+	        </div>
+		
+	        <div class="col-lg-6" id = "buyButton">
+			   <button type="button" class = "btn btn-warning" id = "buttonSmallId">Купити</button>
+	        </div>
+					
+	        <div class="col-lg-6" id = "buyButton">
+			    <button type="button" class = "btn btn-warning" id = "buttonBigId">Купити</button>
+	        </div> 
+		<% } %>  		
+	</div>
+</div>
+       -->
+
+ <div class="col-md-6 col-lg-4">
+	 <div class="thumbnail pizza-card"> 
+		 
+   <% if(pizza.is_new) { %> 
+      <span class="label label-danger" id = "newLabel"> <h4 id ="newText"> Нова </h4> </span> 
+		 
+   <% } else if(pizza.is_popular){ %>
+      <span class="label label-success" id = "popularLabel"> <h4 id ="popularText"> Популярна </h4> </span>  <% } %> 
+		 
+  <img src= "<%= pizza.icon%>"> <h1 class = "pizzaName"><%= pizza.title%></h1> 
+  <h5 class = "pizzaType"><%= pizza.type%></h5> 
+  <h4 class = "pizzaDescription"> <%= getIngredientsArray(pizza).join(", ") %> </h4> 
+		 
+   <% if(pizza.oneS) { %>
+		 
+   <div class="col-lg-12" id = "size-iconOneM"> <img src="assets/images/size-icon.svg"> 
+	    <h5 id = "size"><%=pizza.small_size.size%></h5> </div> 
+		 
+    <div class="col-lg-12" id = "size-iconOneM"><img src="assets/images/weight.svg">
+		<h5 id = "size"><%= pizza.small_size.weight%></h5></div>
+		 
+	<div class="col-lg-12" id = "size-iconOneM"><h2 id = "priseOneM"><%= pizza.small_size.price%></h2>
+	    <h4 id = "currencyO">грн.</h4></div> 
+		 
+	<div class="col-lg-12" id = "buyButtonOneM">
+	<button type="button" class ="btn btn-warning" id ="<%= pizza.buttonId%>">Купити</button></div>
+		 
+	<% } else if (pizza.oneB) { %> 
+		 
+  <div class="col-lg-12" id ="size-iconOneDM"> <img src="assets/images/size-icon.svg"> 
+	  <h5 id = "size"><%=pizza.big_size.size%></h5></div>
+		 
+	<div class="col-lg-12" id = "size-iconOneDM"> <img src="assets/images/weight.svg">
+	   <h5 id = "size"><%=pizza.big_size.weight%></h5></div>
+		 		 
+  <div class="col-lg-12" id ="size-iconOneDM"><h2 id ="priseOneDM"><%= pizza.big_size.price%></h2>
+	  <h4 id = "currencyO">грн.</h4></div>
+		 
+  <div class="col-lg-12" id ="buyButtonOneDM">
+	  <button type="button" class = "btn btn-warning" id = "<%= pizza.buttonId%>">Купити</button></div> 
+		
+   <% } else { %> 
+		 
+<div class="col-lg-6" id = "size-icon"><img src="assets/images/size-icon.svg"><h5 id = "size"><%= pizza.small_size.size%></h5></div>
+		 
+<div class="col-lg-6" id = "size-icon"><img src="assets/images/size-icon.svg"><h5 id = "size"><%= pizza.big_size.size%></h5></div>
+		 
+<div class="col-lg-6" id = "size-icon"><img src="assets/images/weight.svg"><h5 id = "size"><%= pizza.small_size.weight%></h5></div>
+		 
+<div class="col-lg-6" id = "size-icon"><img src="assets/images/weight.svg"><h5 id = "size"><%= pizza.big_size.weight%></h5></div>
+	
+<div class="col-lg-6" id = "size-icon"><h2 id = "prise"><%= pizza.small_size.price%></h2> <h4 id = "currency">грн.</h4></div>
+		 
+<div class="col-lg-6" id = "size-icon"><h2 id = "prise"> <%= pizza.big_size.price%> </h2><h4 id = "currency">грн.</h4></div>
+		 
+<div class="col-lg-6" id = "buyButton"><button type="button" class = "btn btn-warning" id = "buttonSmallId">Купити</button></div>
+		 
+<div class="col-lg-6" id = "buyButton"><button type="button" class = "btn btn-warning" id = "buttonBigId">Купити</button></div> <% } %> 
+	 
+	 </div> 
+</div>
+
+
+

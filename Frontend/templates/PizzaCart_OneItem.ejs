@@ -1,0 +1,120 @@
+<!--
+		  
+  <div class="col-lg-8">
+	
+	   <span id = "name"><%= pizza.title %></span>
+	  
+	   <span id = "name" class = "sizeTitle">(<%= size %>)</span>
+		  <div class="row">
+               <div class="col-lg-6">
+			     <img src="assets/images/size-icon.svg">
+				     <h5 id = "size"><%= size %></h5> 
+			   </div>
+			  
+               <div class="col-lg-6">
+			      <img src="assets/images/weight.svg">
+				  <!-- <% if ((pizza.big_size.size == 40) || (pizza.small_size == null))  { %> -->
+				   <% if ((pizza.small_size == null) || (pizza.big_size.size == 40))  { %>
+				  <h5 id = "size" class = "weight"><%=pizza.big_size.weight%></h5>
+				   <% }  else if ((pizza.big_size == null) || (pizza.small_size.size == 30)){ %> 
+				   <h5 id = "size" class = "weight"><%=pizza.small_size.weight%></h5>
+				   <% } %>
+			   </div>
+          </div> 
+	  
+
+	            <div id = "outer">
+					<div class = "inner">  </div>
+					
+					<div class = "inner">  </div>
+					
+					<div class = "inner">  </div>
+					
+					<div class = "inner">  </div>
+					
+					<div class = "inner">  </div>
+			     
+			  </div>
+	  
+	  <div id = "outer">
+		             <% if ((pizza.big_size == null) || (pizza.small_size.size == 30)) { %>
+					<div class = "inner"> <h5 id = "prizeS"> <%=pizza.small_size.price%> грн</h5> </div>
+		             <% } else if ((pizza.small_size == null) || (pizza.big_size.size == 40)) { %>
+			         <div class = "inner"> <h5 id = "prizeS"> <%=pizza.small_size.price%> грн</h5> </div>
+		             <% } %>
+					<div class = "inner"> <button type="button" class = "btn btn-danger" id = "minusButton">-</button> </div>
+					
+					<div class = "inner"> <h5 id = "ordersAmount"> <%=quantity%> </h5> </div>
+					
+					<div class = "inner"> <button type="button" class = "btn btn-success" id = "plusButton">+</button> </div>
+					
+					<div class = "inner"> <button type="button" class = "btn btn-default" id = "deleteButton">x</button>  </div>
+			     
+			  </div>
+	  
+	    </div>
+		  
+		  <div class="col-lg-4">
+	         <img src= "<%= pizza.icon%>" id = "pizzaImg">	  
+	     </div>
+	     
+  -->
+
+
+<!--
+<div>
+    <%= pizza.title %> (<%= size %>)
+    <div>Ціна: <%= pizza[size].price %> грн.</div>
+    <div>
+        <button class="btn btn-danger minus">-</button>
+        <span class="label label-default"><%= quantity %></span>
+        <button class="btn btn-success plus">+</button>
+    </div>
+</div> -->
+
+
+
+<div class="row" id = "rw" >
+ <div class="col-lg-8">
+	 <span id ="name"><%=pizza.title %></span>
+	 <span id ="name" class ="sizeTitle">(<%=size%>)</span>
+<div class="row">
+ <div class="col-lg-6"><img src="assets/images/size-icon.svg"><h5 id ="size"><%=sizeType%></h5></div>
+	<div class="col-lg-6"><img src="assets/images/weight.svg">
+<%if(sizeType == "30"){%>
+<h5 id ="size" class ="weight"><%=pizza.small_size.weight%></h5>
+	
+<%}else if(sizeType == "40"){%>
+	<h5 id ="size" class ="weight"><%=pizza.big_size.weight%></h5><%}%></div></div>
+
+<div id = "outer">
+	<div class ="inner"></div>
+	<div class ="inner"></div>
+	<div class ="inner"></div>
+	<div class ="inner"></div>
+	<div class ="inner"></div>
+ </div>
+	 
+<div id ="outer">
+	<%if(sizeType == "30"){%>
+ <div class = "inner">
+	 <h5 id = "prizeS"><%=pizza.small_size.price%>грн</h5>
+ </div>
+	
+<%} else if(sizeType == "40"){%>
+	<div class = "inner">
+	<h5 id ="prizeS"><%=pizza.big_size.price%>грн</h5></div>
+<%}%>
+	
+<div class ="inner"><button type="button" class ="btn btn-danger" id = "minusButton">-</button></div>
+<div class ="inner"><h5 id ="ordersAmount"><%=quantity%></h5></div>
+<div class ="inner"><button type="button" class ="btn btn-success" id = "plusButton">+</button></div>
+<div class ="inner"><button type="button" class = "btn btn-default" id = "deleteButton">x</button></div>
+</div></div>
+	
+<div class="col-lg-4"><img src="<%=pizza.icon%>" id = "pizzaImg"></div>
+</div>
+
+
+
+			

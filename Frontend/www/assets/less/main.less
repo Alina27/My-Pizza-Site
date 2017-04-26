@@ -1,0 +1,632 @@
+/*
+@mainColor: blue;
+
+@import "pizza/pizza-card";
+*/
+
+body{
+	background-color:antiquewhite;
+}
+
+#mainContainer{
+	position: absolute;
+	bottom: 0;
+	background-color:antiquewhite;
+	color: antiquewhite;
+	width: 80%;
+	height: 100%;
+	left: 0;
+}
+
+#minorContainer{
+ position:fixed;
+ float:right;
+ width: 20%;
+ height: 100%;	
+ max-height: 95%;	
+ //background-color:gainsboro;
+ background-color: ghostwhite;
+ right: 0;	
+overflow-y: scroll;
+}
+
+
+#topLine{
+	position: fixed;
+	background-color: black;
+	width: 80%;
+	height: 10%;
+	left: 0;
+}
+
+#topMinorLine{
+ position:fixed;
+ float:right;
+ width: 20%;
+ height: 10%;
+ background-color:bisque;
+ right: 0;	
+}
+
+#bottomMinorLine{
+ position:fixed;
+ float:right;
+ width: 20%;
+ height: 10%;
+//	height: 15%;
+ background-color: bisque;
+ right: 0;
+ bottom: 0;
+}
+
+#preBottomMinorLine{
+ position:fixed;
+ float:right;
+ width: 20%;
+ height: 5%;
+ background-color: bisque;
+ right: 0;
+ bottom: 10%;
+// visibility: hidden;
+}
+
+#priceLabel{
+	//float: left;
+	font-size: 15px;
+	font-family: sans-serif;
+	color: black;	
+	font-weight: 600;
+}
+
+#priceTag{
+	float: right;
+	font-size: 20px;
+	font-weight: 600;
+	color: black;
+}
+
+#bottomLine{
+position: fixed;
+background-color: black;
+visibility: hidden;
+width: 80%;
+height: 10%;
+left: 0;
+bottom: 0;
+}
+
+#hr{
+  position: relative;
+  width: 85%;
+  height: 1%;
+  top: -130%;	
+  left: 5%;
+ //border-top: 1px solid red;
+  background-color: red;
+  border-top: 1px solid;
+}
+
+#phoneNumber{
+	position:absolute;
+	//bottom: 30%;
+    left: 38%;
+	font-family: serif;
+	color: white;
+	
+}
+
+#log{
+	position:absolute;
+	right: -38%;
+	font-family: serif;
+	color: white;
+}
+
+#freeDelivery{
+	position:absolute;
+	right: -90%;
+	font-family: serif;
+	color: white;
+}
+
+#SignIn{
+	position:absolute;
+	left: 270%;
+}
+
+#reload{
+	position: absolute;
+	left: 13%;
+	top:55%;
+	font-family: serif;
+	color: white;
+	font-size: 18px;
+}
+
+#flagTop {
+  width: 10%;
+  height: 150%;
+  padding-top: 15px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: red;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  left: 1%;
+}
+
+#flagTop:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 13px solid #eee;
+  border-left: 55px solid transparent;
+  border-right: 55px solid transparent;
+}
+
+#pizzaName{
+  font-family: serif;
+  color: azure;   
+}
+
+#flagBottom{
+  width: 10%;
+  height: 190%;
+  left: 1%;	
+  right: 0;
+  padding-top: 15px;
+  position: absolute;
+  bottom: 0;
+  background: red;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;	
+  visibility: visible;
+}
+
+#flagBottom:after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top:0;
+  width: 0;
+  height: 0;
+  border-bottom: 13px solid #eee;
+  border-left: 55px solid transparent;
+  border-right: 55px solid transparent;	
+  transform: rotate(180deg);
+}
+
+#dashHr{
+	position: relative;
+	//top: 20%;
+	border-top: 1px dotted;
+	color: white;
+	//left: 20%;
+}
+
+#discountePersent{
+	position: relative;
+	//left: 30%;
+} 
+
+#allPizzasLabel{
+	position: absolute;
+	top:10%;
+	left: 45%;
+	color: black;
+}
+
+#badgeItems{
+	background-color: darkorange;
+}
+
+#pizza_list{
+	width: 92%;
+	position: relative;
+	left: 1%;
+    top: 230px;
+	
+}
+
+.pizza-card {
+	//width: 280px;
+	height: 680px;
+	background-color: ghostwhite;
+  img {
+    max-width: 100%;
+  }
+}
+
+.pizzaName{
+	position: absolute;
+	left: 8%;
+	font-family: serif;
+	color: orange;
+	
+}
+
+.pizzaType{
+	position: absolute;
+	left: 8%;
+	bottom: 43%;
+	font-family: serif;
+	color: gray;
+	
+}
+
+.pizzaDescription{
+	position: relative;
+	left: 2%;
+	top: 11%;
+	font-family: serif;
+	color: black;
+    
+}
+
+#size-icon{
+	position: relative;
+	left: 15%;
+	top: 15%; 
+}
+
+#size-iconOneDM{
+	position: relative;
+	left: 37%;
+	top: 12%; 
+	
+}
+
+#size-iconOneM{
+	position: relative;
+	left: 37%;
+	top: 15%; 	
+}
+
+#size{
+	position: relative;
+	right: 0;
+	color: black;
+	display: inline;
+}
+
+#prise{
+	position: relative;
+	color: darkslategray;
+	right: 6%;
+}
+
+#priseOneDM{
+	position: relative;
+	color: darkslategray;
+	right: 5%;
+}
+
+#priseOneM{
+	position: relative;
+	color: darkslategray;
+	//right: 5%;
+}
+
+#currency{
+	position: absolute;
+	color: black;
+	top: 55%;
+	font-family: serif;
+	left: 13%;
+}
+
+#currencyO{
+	position: absolute;
+	color: black;
+	top: 55%;
+	font-family: serif;
+	left: 5%;
+}
+
+#buyButton{
+	position: relative;
+	left: 10%;
+	top: 18%; 	
+}
+
+#buyButtonOneDM{
+	position: relative;	
+	left: 31%;
+	top: 15%; 
+}
+
+#buyButtonOneM{
+	position: relative;	
+	left: 31%;
+	top: 18%; 
+}
+//Нова
+#newLabel{
+	position: absolute;
+	width: 21%;
+	height: 4%;
+	text-align: center;
+	left: 80%;
+	top: -1%;
+}
+
+#newText{
+	position: absolute;
+	bottom: -15%;
+	left: 18%;
+	font-family: cursive;
+}
+
+#popularLabel{
+	position: absolute;
+	width: 34%;
+	height: 4%;
+	text-align: center;
+	left: 67%;
+	top: -1%;
+}
+
+#popularText{
+	position: absolute;
+	bottom: -15%;
+	left: 10%;
+	font-family: cursive;
+}
+
+.bottomSeparator{
+position: relative;
+background-color: beige;
+width: 100%;
+height: 20%;
+left: 0;
+bottom: -40%;
+}
+
+#buttonsList{
+	position: absolute;
+	top:20%;
+	left: 25%;
+	background-color: antiquewhite;
+	border: hidden;
+}
+
+#clearOrderButton{
+	height: 1px;
+	background-color: bisque;
+	border: hidden;
+}
+
+#all{
+  background-color: darkorange;
+  border: hidden;
+  border-radius: 5px;
+  
+}
+
+#meat{
+  background-color: antiquewhite;
+  border: hidden;
+  border-radius: 5px;
+}
+
+#pineapple{
+  background-color: antiquewhite;
+  border: hidden;
+  border-radius: 5px;
+}
+
+#mushrooms{
+  background-color: antiquewhite;
+  border: hidden;	
+  border-radius: 5px;
+}
+
+#seafood{
+  background-color: antiquewhite;
+  border: hidden;
+  border-radius: 5px;
+}
+
+#vaga{
+  background-color: antiquewhite;
+  border: hidden;	
+  border-radius: 5px;
+}
+
+.info{
+	position: relative;
+	top: 30%;
+	text-align: center;
+	color: dimgray;
+	bottom: 0;
+}
+
+#ordersLabel{
+  position: relative;
+  //right: 0; 
+  text-align: center;
+  top: -7%; 
+}
+
+#ordersBadge{
+	background-color: darkorange;
+}
+
+.clearOrder{
+	position: relative;
+	text-align: center;
+	top: -7%;
+	cursor: pointer;
+}
+
+.emptyMess{
+	position: relative;
+	top: 20%;
+	color: black;
+	text-align: center;
+	bottom: 0;
+	//visibility: hidden;
+}
+
+#orderButton{
+	position: relative;
+	width: 85%;
+	height: 65%;
+	left: 8%;
+	top: 13%;
+}
+
+.order{
+	position: absolute;
+	bottom: -7%;
+	left: 25%;
+}
+
+#smallPanel{
+ float:right;
+ width: 94%;
+ height: 17%;
+ background-color: ghostwhite;
+ right: 0;	
+ //border-bottom: 1px solid grey;
+ //border-top: 1px solid grey;
+}
+
+#rw{
+  right: 0;
+  border-bottom: 1px solid grey;	
+  background-color: bisque;
+}
+
+#name{
+   
+  color: darkorange;  
+}
+
+#firstDevider{
+	height: 100%;
+}
+
+#secondDevider{
+	//background-color: blue;
+	height: 100%;
+	right: 0;
+}
+
+#firstRow{
+	//background-color: red;
+	font-size: 17px;
+}
+
+#secondRow{
+	//background-color: yellow;
+}
+
+#nameS{
+	position: relative;
+	right: 0;
+	display: inline;
+}
+
+#size-iconS{
+	position: relative;
+	left: -5%;
+}
+
+#sizeS{
+	position: absolute;
+	right: 100%;
+}
+
+#prizeS{
+//   position: absolute;
+//   left: 1%;
+//   bottom: 10%;	
+    font-weight: bold;
+	//position: relative;
+	//right: 20%;
+}
+
+.functionalRaw{
+	//position: relative;
+	//right: 40%;
+}
+
+#minusButton{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+	text-decoration-style: double;
+//	position: absolute;
+//    left: 29%;
+//	bottom: 10%;
+	
+}
+
+#ordersAmount{
+//	position: absolute;
+//    left: 50%;
+//	bottom: 8%;
+	font-weight: bold;
+}
+
+#plusButton{
+	width:30px;
+    height:30px;
+    border-radius: 50%;
+	text-align: center;
+//	position: absolute;
+//    left: 59%;
+//	bottom: 10%;
+}
+
+#deleteButton{
+	width:30px;
+    height:30px;
+    border-radius: 50%;
+	text-align: center;
+//	position: absolute;
+//    left: 84%;
+//	bottom: 10%;
+	color: orangered;
+	
+}
+
+#pizzaImg{
+//	position: relative;
+	width: 160%;
+	//height: 10%;
+//	left: -35%;
+//	right: -250%;
+//	bottom: 15%;
+}
+
+.list{
+background-color: purple;
+}
+
+#outer
+{
+    width:100%;
+	position: absolute;
+	//position: fixed;
+   // text-align: center;
+}
+.inner
+{
+    display: inline-block;
+}
+
+
